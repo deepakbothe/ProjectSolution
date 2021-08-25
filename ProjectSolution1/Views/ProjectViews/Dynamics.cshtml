@@ -1,0 +1,32 @@
+@model IEnumerable<ProjectSolution1.Models.BlogCard>
+
+    @*@Html.Sitecore().Field("CreatedDate", Model)
+        @Html.Sitecore().Field("SmallDescription", Model)
+    *@
+
+
+    <br>
+
+    <div class="row">
+        <!-- Begin Repeating Elements Area -->
+        <!-- Begin Repeating Element-->
+
+        @foreach (var data in Model)
+        {
+<div class="blog-post-card card col-lg-4 col-md-6">
+    <img src="@data.imgsrc" alt="@data.imgalt" class="card-img-top" />
+    <div class="card-body bg-light">
+        @<strong class="d-inline-block mb-2 text-success">@data.Category</strong>@
+        <h3 class="card-title">@data.BlogTitle</h3>
+        <div class="mb-1 text-muted">@data.Posteddate</div>
+        <p>@data.ShortDesc</p>
+        <a href="@Sitecore.Links.LinkManager.GetItemUrl(Sitecore.Context.Database.GetItem(@data.BlogId))"
+           class="btn btn-warning btn-block">Read on</a>
+    </div>
+</div>}
+        <!-- End Repeating Element-->
+        <!-- End Repeating Elements Area -->
+
+
+
+    </div>

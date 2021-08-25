@@ -1,0 +1,15 @@
+
+
+@{
+    //  var item = Sitecore.Context.Database.GetItem("/sitecore/content/ProjectFolder/Homepage/WebsiteSetting/LocalSetting");
+    var item = Sitecore.Context.Database.GetItem("{5713C618-0FA5-44F0-8B14-8A963031E2A6}");
+}
+
+
+<Footer>
+    <div class="container">
+        <div class="text-white bg-primary">
+            <p class="lead"> @Html.Sitecore().Field("Copyright", item)</p>
+        </div>
+    </div>
+</Footer>
